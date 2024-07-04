@@ -1,0 +1,41 @@
+Llama_config:
+    name: 'Llama'
+    d_model: 512 #4096
+    vocab_size: 8192 #32000
+    n_layers: 8 #32
+    max_seq_len: 512
+    query_heads: 16 #32
+    kv_heads: 8 #8
+    dropout: 0.4
+    bias: True
+    layer_norm: True
+    layer_norm_eps: 1.0e-5
+    gamma_init: 1.0
+    device:
+    dtype:
+    pos_emb_type: 'rope'
+    rope_config:
+    hidden_dim: 2048 #4*d_model
+    multiple_of: 256
+    ffn_dim_multiplier:
+dataset_config:
+    train_data: './data/tinyshakespeare.txt'
+    val_data:
+    test_data:
+    tokenizer_path: './data/tiny_shakespeare.model'
+    context_len: 32 #128
+    batch_size: 64
+training_config:
+    trainer_config:
+        default_root_dir: './results/llama_rope'
+        logger: CSVLogger # [False, CSVLogger]
+        log_every_n_steps: 1
+        max_epochs: 2
+        #accelerator: 'gpu'
+        #devices: 2
+    fit_config:
+        ckpt_path:
+    optimizer_config:
+        lr: 5.0e-3
+        weight_decay: 0.1
+        warmup_duration: 20
