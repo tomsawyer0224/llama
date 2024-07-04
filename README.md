@@ -19,7 +19,7 @@ About this project:
      LlamaHF: Llama model from HuggingFace (with ROPE) \
      Llama_abs: Llama with absolute positional encoding \
      Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model) \
-     Llama_rope: Llama with rotaty position embedding
+     Llama_rope: Llama with rotary position embedding
 
   3. Trained on tiny shakespeare dataset, see the "results" folder for more details. \
      the first 50 epochs \
