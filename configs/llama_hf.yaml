@@ -27,6 +27,6 @@ training_config:
     fit_config:
         ckpt_path:
     optimizer_config:
-        lr: 5.0e-3
+        lr: 5.0e-5
         weight_decay: 0.1
         warmup_duration: 20
