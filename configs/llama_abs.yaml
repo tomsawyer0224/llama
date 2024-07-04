@@ -13,7 +13,7 @@ Llama_config:
     gamma_init: 1.0
     device:
     dtype:
-    pos_emb_type: 'abs_rel'
+    pos_emb_type: 'abs'
     abs_config:
     hidden_dim: 2048 #4*d_model
     multiple_of: 256
@@ -23,7 +23,7 @@ dataset_config:
     val_data:
     test_data:
     tokenizer_path: './data/tiny_shakespeare.model'
-    context_len: 128
+    context_len: 32
     batch_size: 64
 training_config:
     trainer_config:
