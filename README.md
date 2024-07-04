@@ -21,6 +21,11 @@ About this project:
      Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model) \
      Llama_rope: Llama with rotaty position embedding
 
-  3. Trained on tiny shakespeare dataset
+  3. Trained on tiny shakespeare dataset, see the "results" folder for more details. \
+     the first 50 epochs \
+     ![image](https://github.com/tomsawyer0224/llama/assets/130035084/fc56571b-156e-4c2b-af57-53043cbbb2a1)
+     
+
+     
      
   
