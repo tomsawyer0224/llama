@@ -15,10 +15,10 @@ About this project:
      Multihead Attention >> Grouped Query Attention \
      ReLU >> SwiGLU
 
-  2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding to the model
-     LlamaHF: Llama model from HuggingFace (with ROPE)
-     Llama_abs: Llama with absolute positional encoding
-     Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model)
+  2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding to the model \
+     LlamaHF: Llama model from HuggingFace (with ROPE) \
+     Llama_abs: Llama with absolute positional encoding \
+     Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model) \
      Llama_rope: Llama with rotaty position embedding
 
   3. Trained on tiny shakespeare dataset
