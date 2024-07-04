@@ -23,7 +23,7 @@ dataset_config:
     val_data:
     test_data:
     tokenizer_path: './data/tiny_shakespeare.model'
-    context_len: 128
+    context_len: 32
     batch_size: 64
 training_config:
     trainer_config:
