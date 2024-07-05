@@ -29,9 +29,9 @@ About this project:
      After training on 100 epochs, the training loss of Llama_rope is best, Llama_HF is worst. In constrast, the perplexity of Llama_rope is worst, Llama_HF is best. Llama_abs_rel is better than Llama_abs. Overfitting is occurred here (the performance is good at training but bad at validation), maybe caused by model complexity or lack of data to train. Because the training process is performed on the tiny dataset and tiny model, so the conclusions may be not exact and need to do more experiments.
 
 How to use:
-  1. Clone this repo, cd to llama \
-  2. Install the requirements: pip install -q -r requirements.txt \
-  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory \
+  1. Clone this repo, cd to llama
+  2. Install the requirements: pip install -q -r requirements.txt
+  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory
      python train_tokenizer.py \\\
       --corpus './data/tinyshakespeare.txt' \\\
       --vocab_size 8192 \\\
