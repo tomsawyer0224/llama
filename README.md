@@ -31,7 +31,7 @@ About this project:
 How to use:
   1. Clone this repo, cd to llama
   2. Install the requirements: pip install -q -r requirements.txt
-  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory
+  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory \
      python train_tokenizer.py \\\
       --corpus './data/tinyshakespeare.txt' \\\
       --vocab_size 8192 \\\
