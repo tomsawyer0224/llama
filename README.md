@@ -25,7 +25,8 @@ About this project:
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/c629c01a-b903-47a8-85de-99452d61f12f)
-     ![image](https://github.com/tomsawyer0224/llama/assets/130035084/9c9c5591-6604-4439-85de-d1a3534c0409)
+     ![image](https://github.com/tomsawyer0224/llama/assets/130035084/9c9c5591-6604-4439-85de-d1a3534c0409) \
+     After training on 100 epochs, training loss of Llama with ROPE is best, Llama HF is worst. In constrasrt, perplexity of Llama with ROPE is worst, Llama HF is best. Overfitting is occurred here, maybe caused by model complexity or lack of data to train.
 
 
 
