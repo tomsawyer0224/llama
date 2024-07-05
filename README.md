@@ -37,7 +37,7 @@ How to use:
       --vocab_size 8192 \\\
       --model_name 'tinyshakespeare' \\\
       --model_type 'bpe' #
-  4. Traning Llama: edit the config file (configs/llama_rope.yaml,...), then run the command \
+  4. Traning Llama: edit the config file (configs/llama_rope.yaml,...), then run the command
      !python train.py \\\
       --config_file './configs/llama_abs.yaml' \\\
       --max_epochs 100 \\\
