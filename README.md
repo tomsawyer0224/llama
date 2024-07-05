@@ -26,9 +26,25 @@ About this project:
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/c629c01a-b903-47a8-85de-99452d61f12f)
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/9c9c5591-6604-4439-85de-d1a3534c0409) \
-     After training on 100 epochs, the training loss of Llama_rope is best, Llama_HF is worst. In constrast, the perplexity of Llama_rope is worst, Llama_HF is best. Llama_abs_rel is better than Llama_abs. Overfitting is occurred here, maybe caused by model complexity or lack of data to train. Because the training process is performed on the tiny dataset and tiny model, so the conclusions may be not exact and need to do more experiments.
+     After training on 100 epochs, the training loss of Llama_rope is best, Llama_HF is worst. In constrast, the perplexity of Llama_rope is worst, Llama_HF is best. Llama_abs_rel is better than Llama_abs. Overfitting is occurred here (the performance is good at training but bad at validation), maybe caused by model complexity or lack of data to train. Because the training process is performed on the tiny dataset and tiny model, so the conclusions may be not exact and need to do more experiments.
 
-
+How to use:
+  1. Clone this repo, cd to llama \
+  2. Install the requirements: pip install -q -r requirements.txt \
+  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory \
+     python train_tokenizer.py \\\
+      --corpus './data/tinyshakespeare.txt' \\\
+      --vocab_size 8192 \\\
+      --model_name 'tinyshakespeare' \\\
+      --model_type 'bpe' #
+  4. Traning Llama: edit the config file (configs/llama_rope.yaml,...), then run the command \
+     !python train.py \\\
+      --config_file './configs/llama_abs.yaml' \\\
+      --max_epochs 100 \\\
+      --ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # when resume the training \n
+  5. After training, logs and checkpoints will be saved to "results" folder \
+Note: this project was built on Google Colab, it may not work on the other platforms.
+     
 
      
 
