@@ -46,7 +46,7 @@ How to use:
       --max_epochs 100 \
       --ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # when resume the training
 ```
-  7. After training, logs and checkpoints will be saved to "results" folder.
+  7. After training, logs and checkpoints will be saved to "results" folder \
 Note: this project was built on Google Colab, it may not work on the other platforms.
      
 
