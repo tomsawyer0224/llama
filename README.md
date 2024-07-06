@@ -31,18 +31,22 @@ About this project:
 How to use:
   1. Clone this repo, cd to llama
   2. Install the requirements: pip install -q -r requirements.txt
-  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory \
-     python train_tokenizer.py \\\
-      --corpus './data/tinyshakespeare.txt' \\\
-      --vocab_size 8192 \\\
-      --model_name 'tinyshakespeare' \\\
+  3. Training the tokenizer: run the below command, the tokenizer is located in the root directory
+```
+     python train_tokenizer.py \
+      --corpus './data/tinyshakespeare.txt' \
+      --vocab_size 8192 \
+      --model_name 'tinyshakespeare' \
       --model_type 'bpe'
-  4. Traning Llama: edit the config file (configs/llama_rope.yaml,...), then run the command \
-     !python train.py \\\
-      --config_file './configs/llama_abs.yaml' \\\
-      --max_epochs 100 \\\
+```
+  5. Traning Llama: edit the config file (configs/llama_rope.yaml,...), then run the command
+```
+     !python train.py \
+      --config_file './configs/llama_abs.yaml' \
+      --max_epochs 100 \
       --ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # when resume the training
-  5. After training, logs and checkpoints will be saved to "results" folder \
+```
+  7. After training, logs and checkpoints will be saved to "results" folder.
 Note: this project was built on Google Colab, it may not work on the other platforms.
      
 
