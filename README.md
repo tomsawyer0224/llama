@@ -10,10 +10,10 @@
 
 # About this project:
   1. Llama is a family of LLMs developed by Meta with some replacements: \
-     LayerNorm >> RMSNorm \
-     Positional Encoding >> Rotary Position Embedding \
-     Multihead Attention >> Grouped Query Attention \
-     ReLU >> SwiGLU
+     LayerNorm ⟶ RMSNorm \
+     Positional Encoding ⟶ Rotary Position Embedding \
+     Multihead Attention ⟶ Grouped Query Attention \
+     ReLU ⟶ SwiGLU
 
   2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
      LlamaHF: Llama model from HuggingFace (with ROPE) \
