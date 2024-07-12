@@ -1,4 +1,4 @@
-# This is a personal project, for educational purpose only!
+# This is a personal project, for educational purposes only!
 
 # Based on:
   https://arxiv.org/abs/2302.13971 \
@@ -15,13 +15,13 @@
      Multihead Attention >> Grouped Query Attention \
      ReLU >> SwiGLU
 
-  2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding to the model \
+  2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
      LlamaHF: Llama model from HuggingFace (with ROPE) \
      Llama_abs: Llama with absolute positional encoding \
      Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model) \
      Llama_rope: Llama with rotary position embedding
 
-  3. Trained on tiny shakespeare dataset, see the "results" folder for more details. \
+  3. Trained on the tiny_shakespeare dataset, see the "results" folder for more details. \
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/c629c01a-b903-47a8-85de-99452d61f12f)
@@ -48,7 +48,7 @@
 ```
   7. After training, logs and checkpoints will be saved to "results" folder \
 
-Note: this project was built on Google Colab, it may not work on the other platforms.
+Note: This project was built on Google Colab, it may not work on other platforms.
      
 
      
