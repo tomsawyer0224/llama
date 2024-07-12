@@ -1,6 +1,6 @@
-This is a personal project, for educational purpose only!
+# This is a personal project, for educational purpose only!
 
-Based on: \
+# Based on:
   https://arxiv.org/abs/2302.13971 \
   https://arxiv.org/abs/2307.09288 \
   https://arxiv.org/abs/2108.12409 \
@@ -8,7 +8,7 @@ Based on: \
   https://github.com/lucidrains/rotary-embedding-torch \
   https://huggingface.co/docs/transformers/main/en/model_doc/llama
 
-About this project:
+# About this project:
   1. Llama is a family of LLMs developed by Meta with some replacements: \
      LayerNorm >> RMSNorm \
      Positional Encoding >> Rotary Position Embedding \
@@ -28,7 +28,7 @@ About this project:
      ![image](https://github.com/tomsawyer0224/llama/assets/130035084/9c9c5591-6604-4439-85de-d1a3534c0409) \
      After training on 100 epochs, the training loss of Llama_rope is best, Llama_HF is worst. In constrast, the perplexity of Llama_rope is worst, Llama_HF is best. Llama_abs_rel is better than Llama_abs. Overfitting is occurred here (the performance is good at training but bad at validation), maybe caused by model complexity or lack of data to train. Because the training process is performed on the tiny dataset and tiny model, so the conclusions may be not exact and need to do more experiments.
 
-How to use:
+# How to use:
   1. Clone this repo, cd to llama
   2. Install the requirements: pip install -q -r requirements.txt
   3. Training the tokenizer: run the below command, the tokenizer is located in the root directory
