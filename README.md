@@ -27,9 +27,9 @@ https://huggingface.co/docs/transformers/main/en/model_doc/llama
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/9c9c5591-6604-4439-85de-d1a3534c0409) \
 > After training on 100 epochs, the training loss of Llama_rope is the best, Llama_HF is the worst. In contrast, the perplexity of Llama_rope is worst, Llama_HF is the best. Overfitting occurred here (the performance is good at training but bad at validation), maybe caused by model complexity or a lack of data to train. Because the training process is performed on a tiny dataset and a tiny model, the conclusions may not be exact and need to do more experiments.
 # How to use:
-1. Clone this repo, cd to llama
-2. Install the requirements: pip install -q -r requirements.txt
-3. Training the tokenizer: run the below command, then the tokenizer is located in the root directory
+1. Clone this repo, cd to llama.
+2. Install the requirements: pip install -q -r requirements.txt.
+3. Training the tokenizer: run the below command, then the tokenizer is located in the root directory.
 ```
 python train_tokenizer.py \
 --corpus './data/tinyshakespeare.txt' \
@@ -37,7 +37,7 @@ python train_tokenizer.py \
 --model_name 'tinyshakespeare' \
 --model_type 'bpe'
 ```
-4. Traning Llama: modify the config file (configs/llama_rope.yaml,...), then run the below command
+4. Traning Llama: modify the config file (configs/llama_rope.yaml,...), then run the below command:
 ```
 !python train.py \
 --config_file './configs/llama_abs.yaml' \
