@@ -1,11 +1,4 @@
 # This is a personal project, for educational purposes only!
-# Based on:
-https://arxiv.org/abs/2302.13971 \
-https://arxiv.org/abs/2307.09288 \
-https://arxiv.org/abs/2108.12409 \
-https://github.com/Meta-Llama/llama \
-https://github.com/lucidrains/rotary-embedding-torch \
-https://huggingface.co/docs/transformers/main/en/model_doc/llama
 # About this project:
 1. Llama is a family of LLMs developed by Meta with some replacements: \
    LayerNorm ⟶ RMSNorm \
@@ -44,11 +37,15 @@ python train_tokenizer.py \
 --max_epochs 100 \
 --ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # when resume the training
 ```
-5. After training, logs and checkpoints will be saved to "results" folder. \
-
+> The logs and checkpoints will be saved to "results" folder. \
 Note: This project was built on Google Colab, it may not work on other platforms.
-     
-
+# Based on:
+https://arxiv.org/abs/2302.13971 \
+https://arxiv.org/abs/2307.09288 \
+https://arxiv.org/abs/2108.12409 \
+https://github.com/Meta-Llama/llama \
+https://github.com/lucidrains/rotary-embedding-torch \
+https://huggingface.co/docs/transformers/main/en/model_doc/llama
      
 
      
