@@ -1,6 +1,6 @@
 # This is a personal project, for educational purposes only!
 # About this project:
-1. Llama is a family of LLMs developed by Meta with some replacements: \
+1. **LLaMA** is a family of LLMs developed by Meta with some replacements: \
    LayerNorm ⟶ RMSNorm \
    Positional Encoding ⟶ Rotary Position Embedding \
    Multihead Attention ⟶ Grouped Query Attention \
