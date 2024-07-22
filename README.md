@@ -7,8 +7,10 @@
 # About this project:
 1. **This is a personal project, for educational purposes only!**
 2. It is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
-   
-4. 
+- Llama_rope: Llama with rotary position embeddings.
+- Llama_abs: Llama with absolute position encodings.
+- Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model).
+- LlamaHF: Llama model from HuggingFace (with RoPE).
 5. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
    LlamaHF: Llama model from HuggingFace (with ROPE) \
    Llama_abs: Llama with absolute positional encoding \
