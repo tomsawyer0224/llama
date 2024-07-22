@@ -4,14 +4,8 @@
    Positional Encoding ⟶ Rotary Position Embedding \
    Multihead Attention ⟶ Grouped Query Attention \
    ReLU ⟶ SwiGLU
-# This is a personal project, for educational purposes only!
 # About this project:
-1. **LLaMA** or **Large Language Model Meta AI** is a family of LLMs developed by Meta with some replacements: \
-   LayerNorm ⟶ RMSNorm \
-   Positional Encoding ⟶ Rotary Position Embedding \
-   Multihead Attention ⟶ Grouped Query Attention \
-   ReLU ⟶ SwiGLU
-
+1. This is a personal project, for educational purposes only!
 2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
    LlamaHF: Llama model from HuggingFace (with ROPE) \
    Llama_abs: Llama with absolute positional encoding \
