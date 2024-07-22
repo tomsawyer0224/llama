@@ -19,16 +19,11 @@
 4. Result:
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
-   - Overfitting occurred here (the model is too complex or the dataset is too small).
+   - Overfitting occurred here (good at the training phase but bad at the validation phase). The reason is either the model is too complex or the dataset is too small.
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
-   ![image](results/epoch_100/val_ppl_epoch.png)
-   
-   ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
-   ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
-   ![image](https://github.com/tomsawyer0224/llama/assets/130035084/c629c01a-b903-47a8-85de-99452d61f12f)
-   ![image](https://github.com/tomsawyer0224/llama/assets/130035084/9c9c5591-6604-4439-85de-d1a3534c0409) \
+   ![image](results/epoch_100/val_ppl_epoch.png) \
 # How to use:
 1. Clone this repo, cd to llama.
 2. Install the requirements: pip install -q -r requirements.txt.
