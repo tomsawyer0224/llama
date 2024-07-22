@@ -1,5 +1,5 @@
 # LLaMA - Large Languare Model Meta AI
-**LLaMA** is a family of LLMs developed by Meta with some replacements: \
+**LLaMA** is a family of LLMs developed by Meta with some replacements:
 - LayerNorm ⟶ RMSNorm.
 - Positional Encoding ⟶ Rotary Position Embedding.
 - Multihead Attention ⟶ Grouped Query Attention.
@@ -11,12 +11,12 @@
    - Llama_abs_rel: Llama with absolute position encoding and relative position encoding (inspired by the AliBi model).
    - Llama_abs: Llama with absolute position encodings.
    - LlamaHF: Llama model from Hugging Face (with RoPE).
-3. Training:
+3. Experiment:
    - Model size: ~33M params.
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Number of epochs: 100.
    - Platform: Google Colab free (T4 GPU).
-4. Results:
+4. Result:
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
    - Overfitting occurred here (the model is too complex or the dataset is too small).
@@ -27,7 +27,7 @@
 # How to use:
 1. Clone this repo, cd to llama.
 2. Install the requirements: pip install -q -r requirements.txt.
-3. Training the tokenizer: run the below command, then the tokenizer is located in the root directory.
+3. Training the tokenizer: run the below command, the pre-trained tokenizer is located in the root directory.
 ```
 python train_tokenizer.py \
 --corpus './data/tinyshakespeare.txt' \
@@ -42,8 +42,6 @@ python train_tokenizer.py \
 --max_epochs 100 \
 --ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # when resume the training
 ```
-> The logs and checkpoints will be saved to "results" folder. \
-Note: This project was built on Google Colab, it may not work on other platforms.
 # Based on:
 https://arxiv.org/abs/2302.13971 \
 https://arxiv.org/abs/2307.09288 \
