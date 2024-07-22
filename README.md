@@ -11,7 +11,7 @@
    - Llama_abs_rel: Llama with absolute position encoding and relative position encoding (inspired by the AliBi model).
    - Llama_abs: Llama with absolute position encodings.
    - LlamaHF: Llama model from Hugging Face (with RoPE).
-3. Train the model:
+3. Train these models:
    - Model size: ~33M params.
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Platform: Google Colab free (T4 GPU).
