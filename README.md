@@ -1,22 +1,16 @@
 # LLaMA - Large Languare Model Meta AI
 **LLaMA** is a family of LLMs developed by Meta with some replacements: \
-- LayerNorm ⟶ RMSNorm \
-- Positional Encoding ⟶ Rotary Position Embedding \
-- Multihead Attention ⟶ Grouped Query Attention \
+- LayerNorm ⟶ RMSNorm
+- Positional Encoding ⟶ Rotary Position Embedding
+- Multihead Attention ⟶ Grouped Query Attention
 - ReLU ⟶ SwiGLU
 # About this project:
 1. **This is a personal project, for educational purposes only!**
-2. It is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
+2. This project is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
    - Llama_rope: Llama with rotary position embeddings.
    - Llama_abs: Llama with absolute position encodings.
    - Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model).
    - LlamaHF: Llama model from HuggingFace (with RoPE).
-5. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
-   LlamaHF: Llama model from HuggingFace (with ROPE) \
-   Llama_abs: Llama with absolute positional encoding \
-   Llama_abs_rel: Llama with absolute positional encoding and relative positional encoding (inspired by AliBi model) \
-   Llama_rope: Llama with rotary position embedding
-
 6. Trained on the tiny_shakespeare dataset.
 > See the "results" folder for more details. \
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
