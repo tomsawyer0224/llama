@@ -20,6 +20,8 @@
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
    - Overfitting occurred here (the model is too complex or the dataset is too small).
+   ![image](results/epoch_100/train_loss_epoch.png) \
+   
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/c629c01a-b903-47a8-85de-99452d61f12f)
@@ -27,7 +29,7 @@
 # How to use:
 1. Clone this repo, cd to llama.
 2. Install the requirements: pip install -q -r requirements.txt.
-3. Training the tokenizer: run the below command, the pre-trained tokenizer is located in the root directory.
+3. Train the tokenizer: run the below command, the pre-trained tokenizer is located in the root directory.
 ```
 python train_tokenizer.py \
 --corpus './data/tinyshakespeare.txt' \
@@ -35,7 +37,7 @@ python train_tokenizer.py \
 --model_name 'tinyshakespeare' \
 --model_type 'bpe'
 ```
-4. Traning Llama: modify the config file (configs/llama_rope.yaml,...), then run the below command:
+4. Train Llama: modify the config file (configs/llama_rope.yaml,...), then run the below command:
 ```
 !python train.py \
 --config_file './configs/llama_abs.yaml' \
@@ -49,8 +51,3 @@ https://arxiv.org/abs/2108.12409 \
 https://github.com/Meta-Llama/llama \
 https://github.com/lucidrains/rotary-embedding-torch \
 https://huggingface.co/docs/transformers/main/en/model_doc/llama
-     
-
-     
-     
-  
