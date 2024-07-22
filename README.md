@@ -16,8 +16,9 @@
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Platform: Google Colab free (T4 GPU).
 4. Results:
-   - Performance on training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
-   - Performance on validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
+   - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
+   - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
+   - Overfitting orcurred here.
 3. These models are configured in a tiny  are trained on the tiny_shakespeare dataset.
 > See the "results" folder for more details. \
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
