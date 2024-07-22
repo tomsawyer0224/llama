@@ -1,9 +1,9 @@
 # LLaMA - Large Languare Model Meta AI
 **LLaMA** is a family of LLMs developed by Meta with some replacements: \
-   LayerNorm ⟶ RMSNorm \
-   Positional Encoding ⟶ Rotary Position Embedding \
-   Multihead Attention ⟶ Grouped Query Attention \
-   ReLU ⟶ SwiGLU
+   1. LayerNorm ⟶ RMSNorm \
+   2. Positional Encoding ⟶ Rotary Position Embedding \
+   3. Multihead Attention ⟶ Grouped Query Attention \
+   4. ReLU ⟶ SwiGLU
 # About this project:
 1. **This is a personal project, for educational purposes only!**
 2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
