@@ -19,8 +19,8 @@
 4. Result:
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
-   - Overfitting occurred here (good at the training phase but poor at the validation phase). The reason is either the model is too complex or the dataset is too small.
-   - See more in ./results. \
+   - Overfitting occurred here (good at the training phase but poor at the validation phase). The reason is that either the model is too complex or the dataset is too small.
+   - See more in the './results' directory. \
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
