@@ -1,3 +1,4 @@
+# LLaMA - Large Languare Model Meta AI
 # This is a personal project, for educational purposes only!
 # About this project:
 1. **LLaMA** or **Large Language Model Meta AI** is a family of LLMs developed by Meta with some replacements: \
