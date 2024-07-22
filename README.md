@@ -21,6 +21,9 @@
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
    - Overfitting occurred here (the model is too complex or the dataset is too small).
    ![image](results/epoch_100/train_loss_epoch.png) \
+   ![image](results/epoch_100/train_ppl_epoch.png) \
+   ![image](results/epoch_100/val_loss_epoch.png) \
+   ![image](results/epoch_100/val_ppl_epoch.png)
    
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
