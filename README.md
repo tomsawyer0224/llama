@@ -6,12 +6,12 @@
 - ReLU ⟶ SwiGLU.
 # About this project:
 1. **This is a personal project, for educational purposes only!**
-2. This project is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
+2. This project is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models (~33M params):
    - Llama_rope: Llama with rotary position embeddings.
    - Llama_abs_rel: Llama with absolute position encoding and relative position encoding (inspired by AliBi model).
    - Llama_abs: Llama with absolute position encodings.
    - LlamaHF: Llama model from Hugging Face (with RoPE).
-3. The models are trained on the tiny_shakespeare dataset.
+3. These models are trained on the tiny_shakespeare dataset.
 > See the "results" folder for more details. \
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/3ee9e3f9-a09a-47c7-9e7f-9f76d3aa9ff3)
    ![image](https://github.com/tomsawyer0224/llama/assets/130035084/55d77136-d19e-4335-8b67-5b9ccfd5ed9a)
