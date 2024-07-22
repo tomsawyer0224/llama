@@ -26,9 +26,9 @@
    ![image](results/epoch_100/val_loss_epoch.png) \
    ![image](results/epoch_100/val_ppl_epoch.png) \
 # How to use:
-1. Clone this repo, cd to llama.
+1. Clone this repo, cd into llama.
 2. Install the requirements: pip install -q -r requirements.txt.
-3. Train the tokenizer: run the below command, the pre-trained tokenizer is located in the root directory.
+3. Train the tokenizer: run the below command; after that, the pre-trained tokenizer is located in the root directory.
 ```
 python train_tokenizer.py \
 --corpus './data/tinyshakespeare.txt' \
@@ -41,7 +41,7 @@ python train_tokenizer.py \
 !python train.py \
 --config_file './configs/llama_abs.yaml' \
 --max_epochs 100 \
---ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # when resume the training
+--ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # add this line when resume the training
 ```
 # Based on:
 https://arxiv.org/abs/2302.13971 \
