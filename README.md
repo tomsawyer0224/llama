@@ -5,7 +5,7 @@
    Multihead Attention ⟶ Grouped Query Attention \
    ReLU ⟶ SwiGLU
 # About this project:
-1. This is a personal project, for educational purposes only!
+1. **This is a personal project, for educational purposes only!**
 2. On this project, I built 4 Llama models (without KV cache) to test the impacts of positional encoding on the model. \
    LlamaHF: Llama model from HuggingFace (with ROPE) \
    Llama_abs: Llama with absolute positional encoding \
