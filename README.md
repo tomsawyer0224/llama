@@ -23,7 +23,7 @@
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
-   ![image](results/epoch_100/val_ppl_epoch.png) \
+   ![image](results/epoch_100/val_ppl_epoch.png)
 3. **Conclusion**
    - Overfitting occurred here. The reason can be:
      - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
