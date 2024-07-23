@@ -1,4 +1,4 @@
-# LLaMA - Large Languare Model Meta AI
+# LLaMA: Large Languare Model Meta AI
 **LLaMA** is a family of LLMs developed by Meta with some replacements:
 - LayerNorm ⟶ RMSNorm.
 - Absolute Position Encodings ⟶ Rotary Position Embeddings.
@@ -16,7 +16,7 @@
    - Model size: ~33M params.
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Number of epochs: 100.
-   - Platform: Google Colab free (T4 GPU).
+   - Platform: Google Colab Free (with a T4 GPU).
 2. **Results**
    - The performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - The performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
@@ -30,7 +30,7 @@
      - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
      - The model is too complex. ⟶ Try to use another configuration (decrease d_model, kv_heads, n_layers; increase weight_decay; etc.).
 # How to use
-1. Clone this repo, cd into llama.
+1. Clone this repo and cd into llama.
 2. Install the requirements: pip install -q -r requirements.txt.
 3. Train the tokenizer: run the below command; after that, the pre-trained tokenizer is located in the root directory.
       ```
