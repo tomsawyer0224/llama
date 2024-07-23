@@ -17,15 +17,17 @@
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Number of epochs: 100.
    - Platform: Google Colab free (T4 GPU).
-2. **Result**:
+2. **Result**
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
-   - Overfitting occurred here (good at the training phase but poor at the validation phase). The reason is that either the model is too complex or the dataset is too small.
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
    ![image](results/epoch_100/val_ppl_epoch.png) \
 3. **Conclusion**
+   - Overfitting occurred here. The reason can be:
+     - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
+     - The model is too complex. ⟶ Try to use another configuration (decrease d_model, kv_heads, n_layers; increase weight_decay; etc.).
 # How to use:
 1. Clone this repo, cd into llama.
 2. Install the requirements: pip install -q -r requirements.txt.
