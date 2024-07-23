@@ -5,8 +5,8 @@
 - Multihead Attention ⟶ Grouped Query Attention.
 - ReLU ⟶ SwiGLU.
 # About this project:
-1. This is a personal project, for educational purposes only!
-2. This project is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
+- This is a personal project, for educational purposes only!
+- This project is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
    - Llama_rope: Llama with rotary position embeddings.
    - Llama_abs_rel: Llama with absolute position encoding and relative position encoding (inspired by the AliBi model).
    - Llama_abs: Llama with absolute position encodings.
