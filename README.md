@@ -18,8 +18,8 @@
    - Number of epochs: 100.
    - Platform: Google Colab free (T4 GPU).
 2. **Results**
-   - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
-   - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
+   - The performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
+   - The performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
