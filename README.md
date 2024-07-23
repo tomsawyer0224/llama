@@ -47,7 +47,7 @@ python train_tokenizer.py \
 --max_epochs 100 \
 --ckpt_path './results/llama_abs/checkpoints/epoch=49-step=5500.ckpt' # add this line when resume the training
 ```
-# Based on:
+# Based on
 https://arxiv.org/abs/2302.13971 \
 https://arxiv.org/abs/2307.09288 \
 https://arxiv.org/abs/2108.12409 \
