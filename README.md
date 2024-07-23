@@ -25,7 +25,7 @@
    ![image](results/epoch_100/val_loss_epoch.png) \
    ![image](results/epoch_100/val_ppl_epoch.png)
 3. **Conclusions**
-- The 'Rotary Position Embeddings' method get the best perfomance.
+- The 'Rotary Position Embeddings' method gets the best performance.
 - Overfitting occurred here. The reasons can be:
   - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
   - The model is too complex. ⟶ Try to use another configuration (decrease d_model, kv_heads, n_layers; increase weight_decay; etc.).
