@@ -25,7 +25,8 @@
    ![image](results/epoch_100/val_loss_epoch.png) \
    ![image](results/epoch_100/val_ppl_epoch.png)
 3. **Conclusion**
-Overfitting occurred here. The reasons can be:
+- The 'Rotary Position Embeddings' method get the best perfomance on the training phase 
+- Overfitting occurred here. The reasons can be:
   - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
   - The model is too complex. ⟶ Try to use another configuration (decrease d_model, kv_heads, n_layers; increase weight_decay; etc.).
 # How to use:
@@ -50,6 +51,7 @@ python train_tokenizer.py \
 https://arxiv.org/abs/2302.13971 \
 https://arxiv.org/abs/2307.09288 \
 https://arxiv.org/abs/2108.12409 \
+https://arxiv.org/abs/2104.09864 \
 https://github.com/Meta-Llama/llama \
 https://github.com/lucidrains/rotary-embedding-torch \
 https://huggingface.co/docs/transformers/main/en/model_doc/llama
