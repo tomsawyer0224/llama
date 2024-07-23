@@ -4,14 +4,14 @@
 - Absolute Position Encodings ⟶ Rotary Position Embeddings.
 - Multihead Attention ⟶ Grouped Query Attention.
 - ReLU ⟶ SwiGLU.
-# About this project:
+# About this project
 - This is a personal project, for educational purposes only!
 - This project is built to compare three position encoding methods: Rotary Position Embeddings, Absolute Position Encodings and Relative Position Encodings. There are four models:
    - Llama_rope: Llama with rotary position embeddings.
    - Llama_abs_rel: Llama with absolute position encoding and relative position encoding (inspired by the AliBi model).
    - Llama_abs: Llama with absolute position encodings.
    - LlamaHF: Llama model from Hugging Face (with RoPE).
-# Experiment:
+# Experiment
 1. **Training**
    - Model size: ~33M params.
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
@@ -29,7 +29,7 @@
 - Overfitting occurred here. The reasons can be:
   - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
   - The model is too complex. ⟶ Try to use another configuration (decrease d_model, kv_heads, n_layers; increase weight_decay; etc.).
-# How to use:
+# How to use
 1. Clone this repo, cd into llama.
 2. Install the requirements: pip install -q -r requirements.txt.
 3. Train the tokenizer: run the below command; after that, the pre-trained tokenizer is located in the root directory.
