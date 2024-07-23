@@ -11,20 +11,21 @@
    - Llama_abs_rel: Llama with absolute position encoding and relative position encoding (inspired by the AliBi model).
    - Llama_abs: Llama with absolute position encodings.
    - LlamaHF: Llama model from Hugging Face (with RoPE).
-3. Experiment:
+# Experiment:
+1. **Training**
    - Model size: ~33M params.
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Number of epochs: 100.
    - Platform: Google Colab free (T4 GPU).
-4. Result:
+2. **Result**:
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
    - Overfitting occurred here (good at the training phase but poor at the validation phase). The reason is that either the model is too complex or the dataset is too small.
-   - See more in the './results' directory. \
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
    ![image](results/epoch_100/val_ppl_epoch.png) \
+3. **Conclusion**
 # How to use:
 1. Clone this repo, cd into llama.
 2. Install the requirements: pip install -q -r requirements.txt.
