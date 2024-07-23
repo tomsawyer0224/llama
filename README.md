@@ -17,14 +17,14 @@
    - Dataset: [tiny_shakespeare](data/tinyshakespeare.txt).
    - Number of epochs: 100.
    - Platform: Google Colab free (T4 GPU).
-2. **Result**
+2. **Results**
    - Performance on the training phase: Llama_rope > Llama_abs_rel > Llama_abs > LlamaHF.
    - Performance on the validation phase: Llama_rope < Llama_abs_rel < Llama_abs < LlamaHF.
    ![image](results/epoch_100/train_loss_epoch.png) \
    ![image](results/epoch_100/train_ppl_epoch.png) \
    ![image](results/epoch_100/val_loss_epoch.png) \
    ![image](results/epoch_100/val_ppl_epoch.png)
-3. **Conclusion**
+3. **Conclusions**
 - The 'Rotary Position Embeddings' method get the best perfomance on the training phase 
 - Overfitting occurred here. The reasons can be:
   - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
