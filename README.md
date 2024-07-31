@@ -27,7 +27,7 @@
 3. **Conclusions**
    - The 'Rotary Position Embeddings' method gets the best performance.
    - Overfitting occurred here. The reasons can be:
-     - The dataset is too small (~1M of text). ⟶ Try to use a bigger dataset.
+     - The dataset is too small (~1M of text). ⟶ Try to use a larger dataset.
      - The model is too complex. ⟶ Try to use another configuration (decrease d_model, kv_heads, n_layers; increase weight_decay; etc.).
 # How to use
 1. Clone this repo and cd into llama.
