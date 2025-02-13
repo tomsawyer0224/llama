@@ -5,9 +5,11 @@ import torch.nn.functional as F
 from einops import einsum, rearrange, repeat
 from torch import Tensor, nn
 
-#from modules import RotaryEmbedding, SinusoidalPositionalEncoding
+# from modules import RotaryEmbedding, SinusoidalPositionalEncoding
 from .rope import RotaryEmbedding
 from .spe import SinusoidalPositionalEncoding
+
+
 def scaled_dot_product_gqa(
     query: Tensor,
     key: Tensor,
@@ -309,6 +311,7 @@ class MultiheadGQA(nn.Module):
 
         return x, attn
 
+
 def scaled_dot_product_gqa_v2(
     query: Tensor,
     key: Tensor,
@@ -320,7 +323,7 @@ def scaled_dot_product_gqa_v2(
     need_weights: bool = False,
     average_attn_weights: bool = False,
     force_grouped: bool = False,
-    relative_score: Tensor = None
+    relative_score: Tensor = None,
 ):
     """Scaled dot product attention with support for grouped queries.
     differs from orginal version: adding relative_score, repeat kv_head to query_head
@@ -397,15 +400,15 @@ def scaled_dot_product_gqa_v2(
         # dimension into the batch dimension.  This allows us to compute the attention
         # for each head in parallel, then sum over all of the groups at the end.
 
-        #query = rearrange(query, "b (h g) n d -> b g h n d", g=num_head_groups)
-        #similarity = einsum(query, key, "b g h n d, b h s d -> b h n s")
-        key = repeat(key, 'b hk s d -> b g hk s d', g = num_head_groups)
-        key = rearrange(key, 'b g hk s d -> b (g hk) s d')
-        value = repeat(value, 'b hv s d -> b g hv s d', g = num_head_groups)
-        value = rearrange(value, 'b g hv s d -> b (g hv) s d')
-    #else:
-        # If the number of query/key heads is equal, we can skip grouping the queries,
-        # and just use the standard sdot product attention.
+        # query = rearrange(query, "b (h g) n d -> b g h n d", g=num_head_groups)
+        # similarity = einsum(query, key, "b g h n d, b h s d -> b h n s")
+        key = repeat(key, "b hk s d -> b g hk s d", g=num_head_groups)
+        key = rearrange(key, "b g hk s d -> b (g hk) s d")
+        value = repeat(value, "b hv s d -> b g hv s d", g=num_head_groups)
+        value = rearrange(value, "b g hv s d -> b (g hv) s d")
+    # else:
+    # If the number of query/key heads is equal, we can skip grouping the queries,
+    # and just use the standard sdot product attention.
     similarity = einsum(query, key, "b h n d, b h s d -> b h n s")
     if is_causal:
         # Mask out the upper triangular portion of the attention matrix. This prevents
@@ -492,9 +495,9 @@ class MultiheadGQA_v2(nn.Module):
         gamma_init: float = 1.0,
         device: Optional[Union[torch.device, str]] = None,
         dtype: Optional[torch.dtype] = None,
-        pos_emb_type: str = 'rope',
+        pos_emb_type: str = "rope",
         rope_config: dict[str, any] = None,
-        abs_config: dict[str, any] = None
+        abs_config: dict[str, any] = None,
     ):
         super().__init__()
         self.query_heads = query_heads
@@ -549,60 +552,64 @@ class MultiheadGQA_v2(nn.Module):
             embed_dim, embed_dim, bias=bias, device=device, dtype=dtype
         )
 
-        assert pos_emb_type in ['rope', 'abs', 'abs_rel'], \
-        "pos_emb_type should be in ['rope', 'abs', 'abs_rel']"
+        assert pos_emb_type in [
+            "rope",
+            "abs",
+            "abs_rel",
+        ], "pos_emb_type should be in ['rope', 'abs', 'abs_rel']"
         # abs = absolute positional encoding
         # abs_rel = absolute positional encoding with adding relative score in attention
-        if pos_emb_type == 'rope':
-            #assert abs_config is None, 'dont provide abs_config when using rope'
+        if pos_emb_type == "rope":
+            # assert abs_config is None, 'dont provide abs_config when using rope'
             if rope_config is None:
                 rope_config = dict(
-                    #dim = head_dim,
-                    #seq_before_head_dim = True,
-                    #use_xpos = False
+                    # dim = head_dim,
+                    # seq_before_head_dim = True,
+                    # use_xpos = False
                 )
             if isinstance(rope_config, dict):
-                rope_config['dim'] = head_dim # to ensure proper config is provided
-                rope_config['seq_before_head_dim'] = True
-                rope_config['use_xpos'] = False
+                rope_config["dim"] = head_dim  # to ensure proper config is provided
+                rope_config["seq_before_head_dim"] = True
+                rope_config["use_xpos"] = False
                 self.rope = RotaryEmbedding(**rope_config)
-            else: # if is object
+            else:  # if is object
                 self.rope = rope_config
-        else: # 'abs' or 'abs_rel'
+        else:  # 'abs' or 'abs_rel'
             if abs_config is None:
                 abs_config = dict(
-                    #d_query = embed_dim,
-                    #d_key = kv_embed_dim
+                    # d_query = embed_dim,
+                    # d_key = kv_embed_dim
                 )
             if isinstance(abs_config, dict):
-                abs_config['d_query'] = embed_dim # to ensure proper config is provided
-                abs_config['d_key'] = kv_embed_dim 
+                abs_config["d_query"] = embed_dim  # to ensure proper config is provided
+                abs_config["d_key"] = kv_embed_dim
                 self.spe = SinusoidalPositionalEncoding(**abs_config)
-            else: # is object
+            else:  # is object
                 self.spe = abs_config
-            if pos_emb_type == 'abs_rel':
+            if pos_emb_type == "abs_rel":
                 self.relative_weight = nn.Parameter(torch.ones((query_heads,)))
         self.pos_emb_type = pos_emb_type
         self._reset_parameters()
+
     def _get_relative_score(self, q, k, relative_weight):
-        '''
+        """
         gets relative score from q(target) and k(source); more nearer, more stronger
         args:
             q, k: (b,seq_len,h,d)
         returns:
             tensor of shape (b,h,q_seq_len,k_seq_len)
-        '''
+        """
         b, q_seq_len, h, d = q.shape
         k_seq_len = k.shape[-3]
         M = max(q_seq_len, k_seq_len)
-        A = torch.arange(0,k_seq_len).repeat((q_seq_len,1))
-        B = torch.arange(0,q_seq_len)[:,None]
+        A = torch.arange(0, k_seq_len).repeat((q_seq_len, 1))
+        B = torch.arange(0, q_seq_len)[:, None]
         C = A - B
-        D = torch.where(C >= 0, M - C, M + C) # (q_seq_len, k_seq_len) = (n, s)
-        W = repeat(relative_weight, 'h -> () h () ()')
-        relative_score = repeat(D, 'n s -> b h n s', b = b, h = h).to(W.device)
-        
-        return (relative_score/M)*W # (b, h, q_seq_len, k_seq_len)
+        D = torch.where(C >= 0, M - C, M + C)  # (q_seq_len, k_seq_len) = (n, s)
+        W = repeat(relative_weight, "h -> () h () ()")
+        relative_score = repeat(D, "n s -> b h n s", b=b, h=h).to(W.device)
+
+        return (relative_score / M) * W  # (b, h, q_seq_len, k_seq_len)
 
     def _reset_parameters(self):
         nn.init.xavier_normal_(self.q_proj.weight)
@@ -643,11 +650,11 @@ class MultiheadGQA_v2(nn.Module):
         #   d - embedding dimension
         #
         # Input shape: (b, n, d)
-        q: Tensor = self.q_proj(query) # (b, n, embed_dim)
-        k: Tensor = self.k_proj(key) # (b, s, kv_embed_dim)
-        v: Tensor = self.v_proj(value) # (b, s, kv_embed_dim)
+        q: Tensor = self.q_proj(query)  # (b, n, embed_dim)
+        k: Tensor = self.k_proj(key)  # (b, s, kv_embed_dim)
+        v: Tensor = self.v_proj(value)  # (b, s, kv_embed_dim)
 
-        if self.pos_emb_type in ['abs', 'abs_rel']:
+        if self.pos_emb_type in ["abs", "abs_rel"]:
             q, k = self.spe(q, k)
 
         # Unfold 'd' dimension into 'h' separate attention heads.
@@ -656,11 +663,11 @@ class MultiheadGQA_v2(nn.Module):
         v = rearrange(v, "b n (h d) -> b n h d", h=self.kv_heads)
         # Apply attention, then fold 'h' attention heads back into 'd'.
 
-        if self.pos_emb_type == 'rope':
-            #q, k = self.rope.rotate_queries_and_keys(q, k)
+        if self.pos_emb_type == "rope":
+            # q, k = self.rope.rotate_queries_and_keys(q, k)
             q = self.rope.rotate_queries_or_keys(q)
             k = self.rope.rotate_queries_or_keys(k)
-        if self.pos_emb_type == 'abs_rel':
+        if self.pos_emb_type == "abs_rel":
             relative_score = self._get_relative_score(q, k, self.relative_weight)
         else:
             relative_score = None
@@ -674,7 +681,7 @@ class MultiheadGQA_v2(nn.Module):
             need_weights=need_weights,
             average_attn_weights=average_attn_weights,
             force_grouped=False,
-            relative_score=relative_score
+            relative_score=relative_score,
         )
         x = rearrange(x, "b n h d -> b n (h d)")
 
@@ -690,13 +697,3 @@ class MultiheadGQA_v2(nn.Module):
         x = self.out_proj(x)
 
         return x, attn
-
-
-
-
-
-
-
-
-
-
